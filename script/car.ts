@@ -1,8 +1,9 @@
 
-type DoorsCar = 2 | 4
+export type DoorsCar = 2 | 4
 
-class Car {
+export class Car {
     // Properties
+    private static numberOfCars: number = 0
     private _make: string
     private _color: string
     private _doors: DoorsCar
@@ -12,6 +13,7 @@ class Car {
         this._make = make
         this._color = color
         this._doors = doors
+        Car.numberOfCars++
     }
 
     // Accessors
@@ -42,6 +44,10 @@ class Car {
 
     // Methods
 
+    static getNumberOfCars() {
+        return Car.numberOfCars
+    }
+
     accelerate(speed: number): string {
         return `${this.worker()} acelera até ${speed} km/h.`
     }
@@ -54,19 +60,7 @@ class Car {
         return `${this.worker()} está virando para a ${direction}.`
     }
 
-    private worker(): string {
+    protected worker(): string {
         return this._make
     }
 }
-
-let myCar1 = new Car('Cool Car Company', 'blue', 2)
-console.log(myCar1.color)
-console.log(myCar1._color)
-
-let myCar2 = new Car('Galaxy Motors', 'red', 3)     private
-
-let myCar3 = new Car('Galaxy Motors', 'gray')
-console.log(myCar3.doors)
-console.log(myCar1.accelerate(35));
-console.log(myCar1.brake());
-console.log(myCar1.turn('right'));
