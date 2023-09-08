@@ -42,7 +42,7 @@ class Car {
 let myCar1 = new Car('Cool Car Company', 'blue', 2);
 console.log(myCar1.color);
 console.log(myCar1._color);
-// let myCar2 = new Car('Galaxy Motors', 'red', 3)
+let myCar2 = new Car('Galaxy Motors', 'red', 3), private;
 let myCar3 = new Car('Galaxy Motors', 'gray');
 console.log(myCar3.doors);
 console.log(myCar1.accelerate(35));

@@ -3,9 +3,9 @@ type DoorsCar = 2 | 4
 
 class Car {
     // Properties
-    _make: string
-    _color: string
-    _doors: DoorsCar
+    private _make: string
+    private _color: string
+    private _doors: DoorsCar
 
     // Constructor
     constructor(make: string, color: string, doors: DoorsCar = 4) {
@@ -54,7 +54,7 @@ class Car {
         return `${this.worker()} está virando para a ${direction}.`
     }
 
-    worker(): string {
+    private worker(): string {
         return this._make
     }
 }
@@ -63,7 +63,7 @@ let myCar1 = new Car('Cool Car Company', 'blue', 2)
 console.log(myCar1.color)
 console.log(myCar1._color)
 
-// let myCar2 = new Car('Galaxy Motors', 'red', 3)
+let myCar2 = new Car('Galaxy Motors', 'red', 3)     private
 
 let myCar3 = new Car('Galaxy Motors', 'gray')
 console.log(myCar3.doors)
