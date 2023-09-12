@@ -1,7 +1,16 @@
 
 export type DoorsCar = 2 | 4
 
-export class Car {
+interface Vehicle {
+    make: string;
+    color: string;
+    doors: number;
+    accelerate(speed: number): string;
+    brake(): string;
+    turn(direction: 'left' | 'right'): string;
+}
+
+export class Car implements Vehicle {
     // Properties
     private static numberOfCars: number = 0
     private _make: string
@@ -17,7 +26,6 @@ export class Car {
     }
 
     // Accessors
-
     get make() {
         return this._make
     }
@@ -43,7 +51,6 @@ export class Car {
     }
 
     // Methods
-
     static getNumberOfCars() {
         return Car.numberOfCars
     }
